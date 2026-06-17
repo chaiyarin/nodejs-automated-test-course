@@ -69,4 +69,23 @@ describe('calculateGrade', () => {
         expect(result).toBe('Invalid Score');
     });
 
+    test.each([
+        [100, 'A'],
+        [95, 'A'],
+        [90, 'A'],
+        [89, 'A-'],
+    ])('should return %s when score is %s', (score, expected) => {
+        const result = calculateGrade(score);
+        expect(result).toBe(expected);
+    });
+
+
+    test.each([
+        { score: 100, expected: 'A' },
+        { score: 95, expected: 'A' },
+        { score: 89, expected: 'A-' },
+    ])('should return $expected when score is $score', ({ score, expected }) => {
+        const result = calculateGrade(score);
+        expect(result).toBe(expected);
+    });
 });
