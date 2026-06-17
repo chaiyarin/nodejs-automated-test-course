@@ -19,3 +19,13 @@ test('add returns correct object when wrapped', () => {
     const result = { value: add(2, 3) };
     expect(result).toEqual({ value: 5 });  // ← toEqual for objects
 });
+
+test('multiply 3 * 4 should equal 12', () => {
+    const result = multiply(3, 4);
+    expect(result).toBe(12);
+});
+
+test('divide 10 / 2 should equal 5', () => {
+    const result = divide(10, 2);
+    expect(result).toBe(5);
+});
