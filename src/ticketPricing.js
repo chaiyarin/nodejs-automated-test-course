@@ -18,3 +18,5 @@ function getTicketPrice(age) {
     if (age <= 59) return 200;
     return 80;
 }
+
+module.exports = { getTicketPrice };
